@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--
+    Plain-Academic by Vasilios Mavroudis
+    Released under the Simplified BSD License/FreeBSD (2-clause) License.
+    https://github.com/mavroudisv/plain-academic
+-->
+
+<html lang="en">
+<head>
+  <title>Thomas Hamelryck</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<style>
+    .aligncenter { text-align: center; }
+</style>
+
+
+
+<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+	  <div class="container">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+				  <li><a href="index.html">Home</a></li>
+				  <li><a href="research.html">Research</a></li>
+				  <li><a href="group.html">Group</a></li> 
+				  <li><a href="funding.html">Funding</a></li>
+				  <li><a href="software.html">Software</a></li>
+				  <li><a href="publications.html">Publications</a></li> 
+				  <li><a href="thoughts.html">Thoughts</a></li> 
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+  
+  <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Entries Column -->
+            <div class="col-md-8" style="height: 100vh;">
+                <!-- Main Image -->
+                <img class="img-responsive" src="publications.png" alt=""><br>
+                <div style="margin-top:3%; text-align:justify;">                
+                <h2>Deep probabilistic programming</h2>
+                My research group focuses on <b>Deep Probabilistic Programming (DPP)</b>, which combines
+                the modelling scope of deep learning with the principled treatment of uncertainity
+                from Bayesian statistics. We apply DPP to problems in bioinformatics, notably 
+                protein folding and protein evolution, and other areas. We also
+                develop new inference methods for DPP, notably based on Stein variational 
+                inference. My group is mostly using the deep probabilistic programming languages 
+                <a href="https://pyro.ai/">Pyro</a> and <a href="https://num.pyro.ai/en/stable/getting_started.html">NumPyro</a>. 
+                <p class="aligncenter">
+                    <a href="https://pyro.ai/">
+                        <img src="pyro_logo.png", width="200">
+                    </a>
+                </p>
+                <p>
+                <h4>Bioinformatics</h4>
+                A recent <a href="https://www.nature.com/articles/s41592-022-01760-4">comment on protein structure 
+                prediction in Nature Methods (2023)</a> stated that <b>"distributions of conformations are the 
+                future of structural biology"</b>. We are exploring the use of probabilistic programming, 
+                deep generative models and directional statistics to generate conformational ensembles.  
+                
+                Bifrost is a <b>deep generative model of protein structure fragments</b>, implemented in Pyro. It is
+                based on a Deep Markov Model, using directional statistics to represent dihedral protein angles. 
+                The models allows sampling of conformational ensembles for given protein sequence fragments. One 
+                of the ongoing projects of our group is to extend such a deep generative model to model
+                the conformational space of entire proteins.
+                Bifrost was published in <a href="http://proceedings.mlr.press/v139/thygesen21a.html">ICML in 2021</a> 
+                and is currently used by the <a href="https://www.evaxion-biotech.com/">Danish AI-driven biotech company
+                Evaxion</a> to design multivalent vaccines based on epitope grafting.
+                <p>
+                <p class="aligncenter">
+                    <img src="bifrost_ensemble.png", width="400">
+                </p>
+                <p>
+                Another project we work on is deep generative models of protein evolution. 
+                Draupnir, also implemented in Pyro, is a <b>deep probabilistic model of protein evolution</b>
+                that can be used for <b>ancestral sequence reconstruction</b>. The model makes use of a tree-structured
+                Ornstein-Uhlenbeck process, obtained from a given phylogenetic tree, as
+                an informative prior for a variational autoencoder and allows for modelling
+                co-evolution of amino acid position (which most current models can't do).
+                Draupnir was <a href="https://openreview.net/pdf?id=FZoZ7a31GCW">published in ICLR in 2022</a>.
+                <p>
+                <p class="aligncenter">
+                    <img src="draupnir_tree.png", width="700">
+                </p>
+                <p>
+                <h4>Stein variational inference</h4>
+                    A distinct family of variational inference methods, called <b>Stein variational inference (Stein VI)</b>
+                    are subject of increasing interest by the ML community due to their
+                    enhanced flexibility as non-parametric particle-based methods. Their main advantage is that such
+                    methods can represent the <b>uncertainty over the neural network parameters</b>, even for large data
+                    sets and models. The core of Stein VI lies in the use of a set of particles 
+                    as an approximating
+                    (i.e. variational) distribution. As such, Stein VI is particularly adept at capturing the rich correlations
+                    between latent variables. By virtue of its improved flexibility, Stein VI can sufficiently deal with non-
+                    Gaussianity and multi-modality, resulting in more accurate approximations of the posterior distribution,
+                    while maintaining the scalability of conventional VI methods. Stein VI approximates the Bayesian posterior
+                    using a mixture of point estimates represented by a <b>set of particles</b>, whereas SVI relies purely on single
+                    point estimates of the neural network parameters. The optimisation routine then involves minimising the KL
+                    divergence between the approximating and true posterior distributions via iterative updates of the particles’
+                    positions according to the so-called <b>Stein forces</b> (see figure). The Stein forces consist of two terms, 
+                    comprising an attractive force (+) pushing the particles towards the modes of the true posterior distribution, and a repulsive
+                    force (-) keeping the particles from each other so that they do not collapse to the same mode. My group is working on 
+                    Bayesian inference using <b>Stein mixtures</b>. In Stein mixtures, each Stein particle serves as the parameters of a distribution, 
+                    as in a conventional mixture model. We have contributed 
+                    <a href="https://num.pyro.ai/en/stable/examples/stein_bnn.html">an implementation of Stein mixtures to Numpyro</a>. 
+                    <p class="aligncenter">
+                        <img src="stein_forces.png", width="600">
+                    </p>
+                <h4>High-performance deep probabilistic programming</h4>
+                We are exploring the use of the <a href="https://futhark-lang.org/">FUTHARK</a> 
+                language to make the estimation of deep models 
+                of protein folding and other demanding applications of deep probabilistic programming
+                tractable. Futhark is a <b>functional data-parallel programming 
+                language</b>. FUTHARK can be compiled to very efficient parallel code, 
+                running on either a CPU or GPU, and is intended to be used for small, performance-sensitive parts 
+                of larger applications, typically by compiling a Futhark program to a library that can be 
+                imported and used by applications written in conventional languages (in our case Python
+                and Pyro/Numpyro). The language is developed at DIKU at the 
+                University of Copenhagen, in the PLTC section (which hosts my research group).
+                <p> 
+                <p class="aligncenter">
+                    <img src="futhark_logo.png", width="500">
+                </p>
+                </div> 
+            </div> 
+
+            <!-- Contact Info on the Sidebar -->
+            <div class="col-md-4">
+                <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>Thomas Hamelryck</b></div><br>
+                <p><b>thamelry@bio.ku.dk</b><br>
+                <p>Department of biology<br>
+                Section for Computational and RNA Biology (SCARB) <br>
+                Ole Maaløes Vej 5 <br>
+                DK-2200 Copenhagen N <br>
+                <p>and <br>
+                <p>Department of computer science<br>
+                Programming languages and theory of computation section (PLTC) </br>
+                Universitetsparken 5, HCØ, building B <br>
+                DK-2100 Copenhagen Ø <br>
+                <p>University of Copenhagen<br>
+                Denmark<br>
+                </p>
+            </div>
+            
+            
+            <!-- Links on the Sidebar -->
+            <div class="col-md-4" style="margin-top:2%">
+              <dd><a href="https://scholar.google.dk/citations?hl=en&user=YoTlzjkAAAAJ">Google Scholar</a></dd> 
+              <dd><a href="https://www.linkedin.com/in/thomas-hamelryck-41a0a64/">LinkedIn</a></dd>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+    <!-- Other people may like it too! -->
+    <a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a> 
+    
+</body>
+
+</html>
