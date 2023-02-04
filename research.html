@@ -131,13 +131,19 @@
                     divergence between the approximating and true posterior distributions via iterative updates of the particles’
                     positions according to the so-called <b>Stein forces</b> (see figure). The Stein forces consist of two terms, 
                     comprising an attractive force (+) pushing the particles towards the modes of the true posterior distribution, and a repulsive
-                    force (-) keeping the particles from each other so that they do not collapse to the same mode. My group is working on 
-                    Bayesian inference using <b>Stein mixtures</b>. In Stein mixtures, each Stein particle serves as the parameters of a distribution, 
-                    as in a conventional mixture model. We have contributed 
-                    <a href="https://num.pyro.ai/en/stable/examples/stein_bnn.html">an implementation of Stein mixtures to Numpyro</a>. 
+                    force (-) keeping the particles from each other so that they do not collapse to the same mode. 
                     <p class="aligncenter">
                         <img src="stein_forces.png" style="width: 90vw; min-width: 100px; max-width:700px">
-                    </p>
+                    </p> 
+                    My group is working on 
+                    Bayesian inference based on <b>Stein mixtures</b>. In Stein mixtures, 
+                    each Stein particle serves as the parameters of a distribution, 
+                    as in a conventional mixture model. PhD student Ola Rønning has contributed 
+                    <a href="https://num.pyro.ai/en/stable/examples/stein_bnn.html">an implementation of Stein mixtures to Numpyro</a>. 
+                    He gives an 
+                    <a href="https://legato-team.eu/ola-ronning-elbo-within-stein-general-and-integrated-stein-variational-inference-part-3-of-3/">
+                    overview of his work on Stein mixtures in this talk</a>.
+                    
                 <h4 align="left">High-performance deep probabilistic programming</h4>
                 We are exploring the use of the <a href="https://futhark-lang.org/">FUTHARK</a> 
                 language to make the estimation of deep models 
