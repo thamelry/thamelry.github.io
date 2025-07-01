@@ -65,7 +65,7 @@
                 My research group focuses on <b>Deep Probabilistic Programming (DPP)</b>, which combines
                 the modelling scope of deep learning with the principled treatment of uncertainity
                 from Bayesian statistics. We apply DPP to problems in bioinformatics, notably 
-                protein folding and protein evolution, and other areas. We also
+                protein structure and evolution, and other areas. We also
                 develop new inference methods for DPP, notably based on Stein variational 
                 inference. My group is mostly using the deep probabilistic programming languages 
                 <a href="https://pyro.ai/">Pyro</a> and <a href="https://num.pyro.ai/en/stable/getting_started.html">NumPyro</a>. 
@@ -76,19 +76,17 @@
                     </a>
                 </p>
                 <p>
-                <h4 align="left">Deep generative models of protein structure</h4>
+                <h2 align="left">Deep generative models of proteins</h2>
                 A recent <a href="https://www.nature.com/articles/s41592-022-01760-4">comment on protein structure 
                 prediction in Nature Methods (2023)</a> stated that <b>"distributions of conformations are the 
                 future of structural biology"</b>. We are exploring the use of probabilistic programming, 
-                deep generative models and directional statistics to generate conformational ensembles.  
+                deep generative models and directional statistics to model protein structure, dynamics and evolution.
                 
                 Bifrost is a <b>deep generative model of protein structure fragments</b>, implemented in Pyro. It is
                 based on a Deep Markov Model, using directional statistics to represent dihedral protein angles. 
-                The models allows sampling of conformational ensembles for given protein sequence fragments. One 
-                of the ongoing projects of our group is to extend such a deep generative model to model
-                the conformational space of entire proteins.
-                Bifrost was published in <a href="http://proceedings.mlr.press/v139/thygesen21a.html">ICML in 2021</a> 
-                and is currently used by the <a href="https://www.evaxion-biotech.com/">Danish AI-driven biotech company
+                The models allows sampling of conformational ensembles for given protein sequence fragments. 
+                Bifrost was published in <a href="http://proceedings.mlr.press/v139/thygesen21a.html">ICML 2021</a> 
+                and used by the <a href="https://www.evaxion-biotech.com/">Danish AI-driven biotech company
                 Evaxion</a> to design multivalent vaccines based on epitope grafting.
                 <p>
                 The figure below shows conformational ensembles of 9-residue fragments sampled from Bifrost, 
@@ -97,51 +95,52 @@
                     <img src="bifrost_ensemble.png", style="width: 40vw; min-width: 100px; max-width:400px">
                 </p>
                 <p>
-                <h4 align="left">Deep generative models of proteins evolution</h4>
                 Another project we work on is deep generative models of protein evolution. 
                 Draupnir, also implemented in Pyro, is a <b>deep probabilistic model of protein evolution</b>
                 that can be used for <b>ancestral sequence reconstruction</b>. The model makes use of a tree-structured
                 Ornstein-Uhlenbeck process, obtained from a given phylogenetic tree, as
                 an informative prior for a variational autoencoder and allows for modelling
                 co-evolution of amino acid position (which most current models can't do).
-                Draupnir was <a href="https://openreview.net/pdf?id=FZoZ7a31GCW">published in ICLR in 2022</a>.
+                Draupnir was published in <a href="https://openreview.net/pdf?id=FZoZ7a31GCW">ICLR 2022</a>.
                 <p>
                 The figure below shows a phylogenetic tree colored by clade to the left,
                 and a two-dimensional projection of the corresponding latent variables representing
                 sequences at each node. The latent variables inferred from the leaf sequences 
-                by Draupnir rfelect the shape of the phylogenetic tree well. 
+                by Draupnir reflect the shape of the phylogenetic tree well. In 2025, we
+		received more funding to continue work on this SOTA model. 
                 <p>
                 <p class="aligncenter">
                     <img src="draupnir_tree.png", style="width: 90vw; min-width: 100px; max-width:700px">
                 </p>
                 <p>
-                <h4 align="left">Stein variational inference for deep probabilistic programming</h4>
-                    A distinct family of variational inference methods, called <b>Stein variational inference (Stein VI)</b>
-                    are subject of increasing interest by the ML community due to their
-                    enhanced flexibility as non-parametric particle-based methods. Their main advantage is that such
-                    methods can represent the <b>uncertainty over the neural network parameters</b>, even for large data
+                <h2 align="left">Stein variational inference for deep models</h2>
+                    <b>Stein variational inference (Stein VI)</b>
+                    is a variational method that  
+                    can represent the <b>uncertainty over the neural network parameters</b>, even for large data
                     sets and models. The core of Stein VI lies in the use of a set of particles 
                     as an approximating
                     (i.e. variational) distribution. As such, Stein VI is particularly adept at capturing the rich correlations
-                    between latent variables. By virtue of its improved flexibility, Stein VI can sufficiently deal with non-
+                    between latent variables. Stein VI can deal with non-
                     Gaussianity and multi-modality, resulting in more accurate approximations of the posterior distribution,
-                    while maintaining the scalability of conventional VI methods. Stein VI approximates the Bayesian posterior
-                    using a mixture of point estimates represented by a <b>set of particles</b>, whereas SVI relies purely on single
-                    point estimates of the neural network parameters. The optimisation routine then involves minimising the KL
+                    while maintaining the scalability of conventional VI methods. 
+                    The optimisation routine then involves minimising the KL
                     divergence between the approximating and true posterior distributions via iterative updates of the particles’
                     positions according to the so-called <b>Stein forces</b> (see figure). The Stein forces consist of two terms, 
-                    comprising an attractive force (+) pushing the particles towards the modes of the true posterior distribution, and a repulsive
+                    comprising an attractive force (+) pushing the particles towards the modes of the true posterior 
+		    distribution, and a repulsive
                     force (-) keeping the particles from each other so that they do not collapse to the same mode. 
                     <p class="aligncenter">
                         <img src="stein_forces.png" style="width: 90vw; min-width: 100px; max-width:700px">
                     </p> 
-                    My group is working on 
-                    Bayesian inference based on <b>Stein mixtures</b>. In Stein mixtures, 
+                    We developed
+                    Bayesian inference based on <b>Stein mixtures (SMI)</b>. In Stein mixtures, 
                     each Stein particle serves as the parameters of a distribution, 
-                    as in a conventional mixture model. PhD student Ola Rønning has contributed 
-                    <a href="https://num.pyro.ai/en/stable/examples/stein_bnn.html">an implementation of Stein mixtures to Numpyro</a>. 
+                    as in a conventional mixture model. SMI can represent posteriors of Bayesian 
+		    neural network with fewer particles, and alleviates vaiance collapse. 
+		    The method was publised in <a href="https://iclr.cc/virtual/2025/poster/31111">ICLR 2025</a>
+		    and is availabe in <a href="https://num.pyro.ai/en/stable/contrib.html#stein-variational-inference">Numpyro</a>. 
                     
-                <h4 align="left">High-performance deep probabilistic programming</h4>
+                <h2 align="left">High-performance deep probabilistic programming</h2>
                 We are exploring the use of the <a href="https://futhark-lang.org/">FUTHARK</a> 
                 language to make the estimation of deep models 
                 of protein folding and other demanding applications of deep probabilistic programming
