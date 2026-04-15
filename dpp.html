@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--
+    Plain-Academic by Vasilios Mavroudis
+    Released under the Simplified BSD License/FreeBSD (2-clause) License.
+    https://github.com/mavroudisv/plain-academic
+-->
+
+<html lang="en">
+<head>
+  <title>Deep Probabilistic Programming Group</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+
+<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+	  <div class="container">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+				  <li><a href="http://www.ku.dk">University of Copenhagen</a></li>
+				  <li><a href="https://www1.bio.ku.dk/english/research/scarb/">SCARB</a>
+				  <li><a href="https://di.ku.dk/english/research/pltc/">PLTC</a>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+  
+  <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Entries Column -->
+            <div class="col-md-8">
+                
+                <!-- Main Image -->
+                <img class="img-responsive" src="smi.png" alt=""><br>
+                
+                <div style="margin-top:3%; text-align:justify;">                
+
+		<h1>Overview</h1>
+		Deep probabilistic programming (DPP) combines the scope of deep learning with the Bayesian treatment of uncertainty. The DPP group spans the departments of biology and computer science at the University of Copenhagen and focuses on both theory and applications of DPP. Main focus areas are Bayesian deep learning, high performance computing for machine learning, and DPP applications in life sciences (protein structure and evolution, RNA biology). We mainly use the DPP languages <a href="http://www.pyro.ai">Pyro</a> and <a href="https://num.pyro.ai/en/stable/">Numpyro</a>.  
+		<h1>Group members</h1>
+		<ul>
+			<li> <a href="http://thamelry.github.io">Thomas Hamelryck</a>, group leader, contact person
+			<li> <a href="https://hjemmesider.diku.dk/~henglein/">Fritz Henglein</a>, contact person
+			<li> Lys Sanz Moreta, shared postdoc with <a href="https://icmm.ku.dk/english/research-groups/joshi-group/">Joshi group, SUND, KU</a>
+			<li> Starting in 2026, shared postdoc with <a href="https://www.bric.ku.dk/people/lund_group/">Lund group, BRIC, KU</a>
+		</ul>
+		<h1>Former members</h1>
+		<ul>
+			<li> Ahmad Al-Sibahi, postdoc
+			<li> Ola Rønning, PhD student and Postdoc
+			<li> Robert Schenck, PhD student and Postdoc
+			<li> Christian Thygesen, industrial PhD student
+			<li> Frans Zdyb, research assistant
+		</ul>
+		<h1>Software</h1>
+		<ul>
+			<li> <a href="https://num.pyro.ai/en/0.15.2/examples/ssbvm_mixture.html">Sine-skewed bivariate von Mises distribution on the 2D torus (Numpyro).</a>
+			<li> <a href="https://github.com/LysSanzMoreta/DRAUPNIR_ASR/">
+						Draupnir, deep generative model of protein evolution.</a>
+				<li> <a href="https://github.com/aleatory-science/smi_experiments">Bayesian deep learning with Stein mixture inference (SMI) using Jax / Numpyro.</a>
+		</ul>
+		<h1>Grants</h1>
+		<ul>
+			<li> <b>Innovationsfonden</b> and <b>PaperFlow </b>(2018), Intelligent accounting document management using probabilistic programming. 88K DKK, one postdoc.
+				<li> <a href="https://www.gknaerospace.com/"><b>GKN Aerospace</b></a> (2019), Sweden, Application of deep learning in aerospace industry manufacturing, 2M DKK, one PhD student.
+				<li><b>Innovationsfonden</b> and <a href="https://evaxion.ai/"><b>Evaxion</b></a> (2019), Accelerating vaccine development through a deep learning and probabilistic programming approach to protein structure prediction, 2.5M DKK, one PhD student.
+			<li><b>Independent Research Fund Denmark-FTP</b> (2020), Deep probabilistic programming for protein structure prediction, 5.9M DKK, two PhD students and one 3-year postdoc (1 year additional co-funding from KU).
+			<li><b>Villum Fonden</b> (2022), Predicting protein structure, mutations and dynamics with deep generative models, 1.8M DKK, one postdoc.
+			<li><b>Independent Research Fund Denmark-FTP</b> (2025), GlycoScytale - Leveraging evolution to decipher the third language of life. Main grant holder <a href="https://icmm.ku.dk/english/research-groups/joshi-group/">Hiren Joshi, SUND, KU</a>. 6.2M DKK, one shared postdoc at Joshi / DPP group.
+		</ul>
+		<h1>Selected publications</h1>
+		<ul>
+			<li>Moreta LS, Al-Sibahi AS, Theobald D, Bullock W, Rommes BN, Manoukian A, Hamelryck, T (2019) A probabilistic programming approach to protein structure superposition. 16th IEEE International Conference on Computational Intelligence in Bioinformatics and Computational Biology (<b>CIBCB</b>), July 9-11, 2019, Certosa di Pontignano, Siena, Tuscany, Italy. 
+			<li>Moreta, LS, Al-Sibahi, AS, Hamelryck, T (2020) Bayesian protein superposition using Hamiltonian Monte Carlo. (2020) 20th IEEE International Conference on BioInformatics And BioEngineering (<b>BIBE</b>), Virtual conference, October 26-28, 2020, USA.
+			<li>Rønning, O, Ley, C, Mardia, KV, Hamelryck, T (2021) Time-efficient Bayesian inference for a (Skewed) von Mises distribution on the torus in a deep probabilistic programming language. IEEE International Conference on Multisensor Fusion and Integration for Intelligent Systems (<b>MFI</b>), 1-8
+			<li>Thygesen, CB, Al-Sibahi, AS, Steenmanns, CS, Moreta, LS, Sørensen, AB, Hamelryck, T. (2021)  Efficient generative modelling of protein structure fragments using a Deep Markov Model. International Conference on Machine Learning (<b>ICML</b>), 139, 10258-10267
+			<li>Moreta, LS, Rønning, O, Al-Sibahi, AS, Hein, J, Theobald, D, Hamelryck, T (2022)  Ancestral protein sequence reconstruction using a tree-structured Ornstein-Uhlenbeck variational autoencoder. International Conference on Learning Representations (<b>ICLR</b>).
+			<li>Schenck, R, Rønning, O, Henriksen, T, Oancea, CE. (2022). AD for an array language with nested parallelism. IEEE International Conference for High Performance Computing, Networking, Storage and Analysis (<b>SC22</b>).
+				<li>Eklöf, J, Snis, U, Hamelryck, T, Grima, A, Ronning, O (2024) AI implementation and capability development in manufacturing: An action research case. Hawaii International Conference on System Sciences (<b>HICSS</b>)
+			<li> Rønning, O, Nalisnick, E, Ley, C, Smyth, P, Hamelryck, T (2025) ELBOing Stein: Variational Bayes with Stein Mixture Inference. International Conference on Learning Representations (<b>ICLR</b>)
+
+			<li>Hamelryck, T, Mardia, KV (2026) Unfolding AlphaFold's Bayesian roots in Probability Kinematics. Twenty-Ninth Annual Conference on Artificial Intelligence and Statistics
+				Tangier, Morocco (<b>AISTATS</b>) 
+		</ul>
+
+                </div> 
+            </div> 
+
+            <!-- Contact Info on the Sidebar -->
+            <div class="col-md-4">
+                <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>Deep Probabilistic Programming Group</b></div><br>
+                <p>Department of biology<br>
+                Section for Computational and RNA Biology (SCARB) <br>
+                Ole Maaløes Vej 5 <br>
+                DK-2200 Copenhagen N <br>
+                <p>and <br>
+                <p>Department of computer science<br>
+                Programming Languages and Theory of Computation Section (PLTC) </br>
+                Universitetsparken 5, HCØ, building B <br>
+                DK-2100 Copenhagen Ø <br>
+                <p>University of Copenhagen<br>
+                Denmark<br>
+                </p>
+            </div>
+            
+            
+        </div>
+
+
+    </div>
+    <!-- /.container -->
+    
+    <!-- Other people may like it too! -->
+    <a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a> 
+    
+</body>
+
+</html>
